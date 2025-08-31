@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RC Estudio de Danzas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Montserrat', sans-serif; background:#fafafa; color:#222; scroll-behavior:smooth; }
+  h1,h2,h3 { font-family:'Playfair Display', serif; }
+
+  /* Header */
+  header {
+    position:fixed; top:0; left:0; right:0;
+    background:#111; color:#fff;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 25px; z-index:1000; box-shadow:0 3px 15px rgba(0,0,0,0.5);
+    transition:0.3s;
+  }
+  header img { height:50px; }
+  nav a { color:#fff; text-decoration:none; margin-left:20px; font-weight:600; transition:0.3s; font-size:0.95rem; }
+  nav a:hover { color:#d4af37; }
+
+  /* Hero */
+  .hero {
+    height:90vh;
+    background: url('images/RC MUESTRA INV-062.jpg') center/cover no-repeat;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; color:#fff; padding-top:60px;
+  }
+  .hero h1 { font-size:4rem; text-shadow:2px 2px 20px rgba(0,0,0,0.7); }
+  .hero p { font-size:1.5rem; margin-top:15px; text-shadow:1px 1px 15px rgba(0,0,0,0.6);}
+  .hero-buttons { margin-top:25px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
+  .hero-buttons a {
+    display:inline-block; background:#d4af37; color:#111; font-weight:600;
+    padding:12px 30px; border-radius:8px; text-decoration:none;
+    box-shadow:0 5px 15px rgba(212,175,55,0.4); transition:0.3s;
+  }
+  .hero-buttons a:hover { background:#b8932a; transform:scale(1.05); box-shadow:0 8px 25px rgba(212,175,55,0.5); }
+
+  /* Section Titles */
+  section h2 { text-align:center; font-size:2.5rem; margin:60px 0 40px; color:#d4af37; position:relative; }
+  section h2::after {
+    content:''; display:block; width:80px; height:4px; background:#d4af37; margin:10px auto 0; border-radius:2px;
+  }
+  section h3 { margin:25px 0 15px; color:#111; text-align:center; font-size:1.5rem; }
+
+  /* Carousel */
+  .carousel { display:flex; overflow-x:auto; scroll-behavior:smooth; gap:20px; padding:0 25px; }
+  .carousel::-webkit-scrollbar { display:none; }
+  .card { flex:0 0 auto; width:220px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:center; transition:0.3s; }
+  .card:hover { transform:translateY(-5px) scale(1.02); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
+  .card img { width:100%; display:block; border-bottom:1px solid #eee; }
+  .card h3 { padding:10px 0 5px; color:#111; font-size:1.05rem; }
+  .card p { padding-bottom:10px; color:#555; font-size:0.95rem; }
+
+  /* Sedes */
+  .sede { position:relative; flex:0 0 auto; width:300px; border-radius:12px; overflow:hidden; transition:0.3s; }
+  .sede img { width:100%; display:block; filter:brightness(0.75); transition:0.5s; }
+  .sede:hover img { filter:brightness(1); }
+  .sede-info { position:absolute; bottom:20px; left:20px; color:#fff; }
+  .sede-info h3 { font-size:1.2rem; margin-bottom:8px; }
+  .sede-info a { display:inline-block; background:#d4af37; color:#111; padding:8px 20px; border-radius:6px; text-decoration:none; font-weight:600; transition:0.3s; }
+  .sede-info a:hover { background:#b8932a; transform:scale(1.05); }
+
+  /* Horarios */
+  .horarios { padding:0 25px; max-width:1200px; margin:0 auto; display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
+  .horarios img { max-width:100%; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); transition:0.3s; }
+  .horarios img:hover { transform:scale(1.02); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
+
+  /* Profesorados */
+  #profesorados { background:#111; color:#fff; padding:60px 0; }
+  #profesorados .grid { display:flex; gap:25px; flex-wrap:wrap; justify-content:center; padding:0 25px; }
+  #profesorados .card { background:#222; color:#fff; width:250px; padding:20px; text-align:center; }
+  #profesorados .card h3 { color:#d4af37; }
+  #profesorados .card p { color:#ccc; }
+
+  /* Contacto */
+  #contacto { padding:60px 25px; background:#f8f8f8; }
+  .contacto { display:flex; gap:40px; flex-wrap:wrap; justify-content:space-between; margin-top:40px; }
+  .contacto .info { flex:1; min-width:250px; }
+  .contacto ul { list-style:none; }
+  .contacto ul li { font-weight:600; margin-bottom:15px; display:flex; align-items:center; gap:8px; }
+  .contacto ul li a { color:#111; text-decoration:none; transition:0.3s; }
+  .contacto ul li a:hover { color:#d4af37; }
+  .contacto form { flex:2; display:flex; flex-direction:column; gap:15px; }
+  .contacto form input, .contacto form textarea { padding:12px 15px; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
+  .contacto form button { background:#d4af37; color:#111; border:none; padding:15px; border-radius:8px; font-weight:600; cursor:pointer; transition:0.3s; }
+  .contacto form button:hover { background:#b8932a; transform:scale(1.05); }
+
+  footer { text-align:center; padding:30px; background:#111; color:#fff; margin-top:50px; }
+
+  /* Botón flotante WhatsApp */
+  .whatsapp-float {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    z-index:1000;
+  }
+  .whatsapp-float img { width:100%; height:100%; }
+
+  @media(max-width:900px){
+    header { flex-direction:column; padding:10px; }
+    nav { margin-top:10px; }
+    .hero h1 { font-size:3rem; }
+    .hero p { font-size:1.2rem; }
+    .hero-buttons a { padding:10px 20px; }
+    .contacto { flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="images/logoreal.jpeg" alt="RC Logo">
+  <nav>
+    <a href="#disciplinas">Disciplinas</a>
+    <a href="#sedes">Sedes</a>
+    <a href="#horarios">Horarios</a>
+    <a href="#profesorados">Profesorados</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>RC Estudio de Danzas</h1>
+  <p>Formando bailarines con excelencia desde 2019</p>
+  <div class="hero-buttons">
+    <a href="#disciplinas">Ver Disciplinas</a>
+    <a href="#sedes">Ver Sedes</a>
+    <a href="#horarios">Ver Horarios</a>
+  </div>
+</section>
+
+<section id="disciplinas">
+  <h2>Disciplinas</h2>
+
+  <h3>Babys</h3>
+  <div class="carousel">
+    <div class="card"><img src="images/acrobaby.jpeg" alt=""><h3>Acro Baby</h3><p>3-5 años</p></div>
+    <div class="card"><img src="images/iniart.jpeg" alt=""><h3>Iniciación Artística</h3><p>3-5 años</p></div>
+    <div class="card"><img src="images/urbbaby.jpeg" alt=""><h3>Urbano Baby</h3><p>3-6 años</p></div>
+  </div>
+
+  <h3>Infantil</h3>
+  <div class="carousel">
+    <div class="card"><img src="images/jazzinfa.jpeg" alt=""><h3>Jazz Infantil A</h3><p>6-8 años</p></div>
+    <div class="card"><img src="images/jazzb.jpeg" alt=""><h3>Jazz Infantil B</h3><p>9-12 años</p></div>
+    <div class="card"><img src="images/regginf.jpeg" alt=""><h3>Reggaeton Infantil 7-9 años</h3></div>
+    <div class="card"><img src="images/urbanoinf.jpeg" alt=""><h3>Urbano Infantil</h3><p>7-11 años</p></div>
+    <div class="card"><img src="images/coreokids.jpeg" alt=""><h3>Coreo Kids</h3><p>7-11 años</p></div>
+  </div>
+
+  <h3>Juvenil / Adulto</h3>
+  <div class="carousel">
+    <div class="card"><img src="images/regginf.jpeg" alt=""><h3>Reggaeton Teens 10-12 años</h3></div>
+    <div class="card"><img src="images/acrotelajuve.jpeg" alt=""><h3>Acro en Telas</h3><p>+12 años</p></div>
+    <div class="card"><img src="images/danzaclasica.jpeg" alt=""><h3>Danza Clásica</h3></div>
+    <div class="card"><img src="images/danzajazzprinci.jpeg" alt=""><h3>Danza Jazz Principiantes</h3></div>
+    <div class="card"><img src="images/rockandroll.jpeg" alt=""><h3>Rock And Roll</h3></div>
+    <div class="card"><img src="images/danzaclasicaadul.jpeg" alt=""><h3>Danza Clásica Adultos</h3></div>
+    <div class="card"><img src="images/femmeyheels.jpeg" alt=""><h3>Femme/Heels</h3></div>
+    <div class="card"><img src="images/poleexotic.jpeg" alt=""><h3>Pole Exotic</h3></div>
+    <div class="card"><img src="images/reggaetonconi.jpeg" alt=""><h3>Reggaeton Fusion</h3></div>
+  </div>
+
+  <h3>Todas las edades</h3>
+  <div class="carousel">
+    <div class="card"><img src="images/acrodance.jpeg" alt=""><h3>Acro Dance</h3></div>
+    <div class="card"><img src="images/acroenarolyra.jpeg" alt=""><h3>Acro en Aro (Lyra)</h3></div>
+    <div class="card"><img src="images/elongacion.jpeg" alt=""><h3>Elongación</h3></div>
+    <div class="card"><img src="images/polegiratorio.jpeg" alt=""><h3>Pole Giratorio Multinivel</h3></div>
+    <div class="card"><img src="images/polesport.jpeg" alt=""><h3>Pole Sport Multinivel</h3></div>
+  </div>
+</section>
+
+<section id="sedes">
+  <h2>Sedes</h2>
+  <div class="carousel">
+    <div class="sede">
+      <img src="images/horariosplanes.jpeg" alt="Planes">
+      <div class="sede-info">
+        <h3>Planes 1933, William Morris</h3>
+        <a href="https://www.google.com/maps" target="_blank">Ver en Maps</a>
+      </div>
+    </div>
+    <div class="sede">
+      <img src="images/horariossedepotosi.jpeg" alt="Potosí">
+      <div class="sede-info">
+        <h3>Potosí 3249, William Morris</h3>
+        <a href="https://www.google.com/maps" target="_blank">Ver en Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="horarios">
+  <h2>Horarios</h2>
+  <div class="horarios">
+    <img src="images/horariosplanes.jpeg" alt="Horarios Planes">
+    <img src="images/horariossedepotosi.jpeg" alt="Horarios Potosí">
+  </div>
+</section>
+
+<section id="profesorados">
+  <h2>Formación Docente</h2>
+  <div class="grid">
+    <div class="card"><h3>Profesorado Clásico</h3><p>Formación integral en técnica clásica y pedagogía coreográfica</p></div>
+    <div class="card"><h3>Profesorado Jazz</h3><p>Formación integral en técnica jazz y pedagogía coreográfica</p></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contáctanos</h2>
+  <h3>¿Listo para comenzar?</h3>
+  <p>Únete a nuestra comunidad de bailarines y futuros docentes. Ofrecemos clases multinivel y asesoramiento personalizado.</p>
+  <div class="contacto">
+    <div class="info">
+      <ul>
+        <li><img src="images/logowpp.jpg" alt="WhatsApp" width="24"> <a href="https://wa.me/541162287342?text=Hola,%20me%20gustaría%20recibir%20más%20información">+54 9 11 6228-7342</a></li>
+        <li>🏢 Sedes: Planes y Potosí</li>
+        <li><img src="images/fb.png" alt="Facebook" width="24"> <a href="https://facebook.com/rcestudiodedanzas" target="_blank">RC Estudio de Danzas</a></li>
+        <li><img src="images/logoig.jpg" alt="Instagram" width="24"> <a href="https://instagram.com/rcestudiodedanzas" target="_blank">@rcestudiodedanzas</a></li>
+      </ul>
+    </div>
+    <form>
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo" required>
+      <input type="tel" placeholder="Teléfono" required>
+      <textarea placeholder="Mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 RC Estudio de Danzas. Todos los derechos reservados.
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/541162287342?text=Hola,%20me%20gustaría%20recibir%20más%20información" target="_blank" class="whatsapp-float">
+  <img src="images/logowpp.jpg" alt="WhatsApp">
+</a>
+
+<script>
+  document.querySelectorAll('nav a, .hero-buttons a').forEach(link=>{
+    link.addEventListener('click', e=>{
+      e.preventDefault();
+      document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
+
