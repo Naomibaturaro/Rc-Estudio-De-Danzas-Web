@@ -1,28 +1,28 @@
-﻿<!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RC Estudio de Danzas</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
+  <style>
+  * { margen:0; relleno:0; tamaño de caja:border-box; }
   body { font-family:'Montserrat', sans-serif; background:#fafafa; color:#222; scroll-behavior:smooth; }
   h1,h2,h3 { font-family:'Playfair Display', serif; }
 
-  header {
-    position:fixed; top:0; left:0; right:0;
-    background:#111; color:#fff;
+  encabezado {
+    posición:fija; arriba:0; izquierda:0; derecha:0;
+    fondo:#111; color:#fff;
     display:flex; align-items:center; justify-content:space-between;
-    padding:10px 25px; z-index:1000; box-shadow:0 3px 15px rgba(0,0,0,0.5);
+    relleno: 10px 25px; z-index: 1000; box-shadow: 0 3px 15px rgba(0,0,0,0.5);
   }
-  header img { height:50px; }
+  imagen de encabezado { altura: 50px; }
   nav a { color:#fff; text-decoration:none; margin-left:20px; font-weight:600; font-size:0.95rem; }
   nav a:hover { color:#d4af37; }
 
-  .hero {
-    height:90vh;
-    background: url('images/RC MUESTRA INV-062.jpg') center/cover no-repeat;
+  .héroe {
+    altura:90vh;
+    fondo: url('images/RC MUESTRA INV-062.jpg') centro/cubierta no-repetir;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
     text-align:center; color:#fff; padding-top:60px;
   }
@@ -31,25 +31,74 @@
   .hero-buttons { margin-top:25px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
   .hero-buttons a {
     display:inline-block; background:#d4af37; color:#111; font-weight:600;
-    padding:12px 30px; border-radius:8px; text-decoration:none;
+    relleno: 12px 30px; radio de borde: 8px; decoración de texto: ninguna;
     box-shadow:0 5px 15px rgba(212,175,55,0.4); transition:0.3s;
   }
   .hero-buttons a:hover { background:#b8932a; transform:scale(1.05); box-shadow:0 8px 25px rgba(212,175,55,0.5); }
 
-  section h2 { text-align:center; font-size:2.5rem; margin:60px 0 40px; color:#d4af37; position:relative; }
-  section h2::after { content:''; display:block; width:80px; height:4px; background:#d4af37; margin:10px auto 0; border-radius:2px; }
-  section h3 { margin:25px 0 15px; color:#111; text-align:center; font-size:1.5rem; }
+  sección h2 { text-align:center; font-size:2.5rem; margin:60px 0 40px; color:#d4af37; position:relative; }
+  sección h2::after { contenido:''; mostrar:bloque; ancho:80px; alto:4px; fondo:#d4af37; margen:10px auto 0; radio de borde:2px; }
+  sección h3 { margen:25px 0 15px; color:#111; alineación de texto:centro; tamaño de fuente:1.5rem; }
 
   .carousel { display:flex; overflow-x:auto; scroll-behavior:smooth; gap:20px; padding:0 25px; }
   .carousel::-webkit-scrollbar { display:none; }
-  .card { flex:0 0 auto; width:220px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:center; transition:0.3s; }
-  .card:hover { transform:translateY(-5px) scale(1.02); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
-  .card img { width:100%; display:block; border-bottom:1px solid #eee; cursor:pointer; border-radius:8px; }
+
+  .card { flex:0 0 auto; width:220px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:center; }
   .card h3 { padding:10px 0 5px; color:#111; font-size:1.05rem; }
   .card p { padding-bottom:10px; color:#555; font-size:0.95rem; }
 
+  .card img { width:100%; display:block; border-bottom:1px solid #eee; cursor:pointer; border-radius:8px; }
+
+  /* CONTENEDOR Y FLECHAS */
+  .carrusel-contenedor {
+    posición: relativa;
+    pantalla: flexible;
+    alinear-elementos: centro;
+  }
+
+  .flecha {
+    posición: absoluta;
+    superior: 50%;
+    transformar: traducirY(-50%);
+    tamaño de fuente: 40px;
+    color: blanco;
+    fondo: rgba(0,0,0,0.6);
+    relleno: 10px;
+    cursor: puntero;
+    índice z: 10;
+    radio de borde: 50%;
+    transición: 0,3 s;
+  }
+
+  .arrow:hover {
+    fondo: rgba(0,0,0,0.9);
+    transformar: trasladarY(-50%) escala(1.1);
+  }
+
+  .arrow.left { left: 10px; }
+  .arrow.right { right: 10px; }
+
+  /* ZOOM TIPO NETFLIX */
+  .tarjeta {
+    transición: transformación 0,4 s de facilidad, sombra de caja 0,4 s de facilidad;
+  }
+
+  .card:hover {
+    transformar: escala(1.15);
+    índice z: 5;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  }
+
+  .card img {
+    transición: transformar 0,4 s de facilidad;
+  }
+
+  .card:hover img {
+    transformar: escala(1.1);
+  }
+
   .sede { position:relative; flex:0 0 auto; width:300px; border-radius:12px; overflow:hidden; transition:0.3s; }
-  .sede img { width:100%; display:block; filter:brightness(0.75); transition:0.5s; cursor:pointer; border-radius:8px; }
+  .sede img { ancho:100%; mostrar:bloque; filtro:brillo(0.75); transición:0.5s; cursor:puntero; radio de borde:8px; }
   .sede:hover img { filter:brightness(1); }
   .sede-info { position:absolute; bottom:20px; left:20px; color:#fff; }
   .sede-info h3 { font-size:1.2rem; margin-bottom:8px; }
@@ -71,64 +120,77 @@
   .contacto .info { flex:1; min-width:250px; }
   .contacto ul { list-style:none; }
   .contacto ul li { font-weight:600; margin-bottom:15px; display:flex; align-items:center; gap:8px; }
-  .contacto ul li a { color:#111; text-decoration:none; transition:0.3s; }
+  .contacto ul li a { color:#111; decoración de texto: ninguna; transición: 0,3 s; }
   .contacto ul li a:hover { color:#d4af37; }
   .contacto form { flex:2; display:flex; flex-direction:column; gap:15px; }
   .contacto form input, .contacto form textarea { padding:12px 15px; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
   .contacto form button { background:#d4af37; color:#111; border:none; padding:15px; border-radius:8px; font-weight:600; cursor:pointer; transition:0.3s; }
   .contacto form button:hover { background:#b8932a; transform:scale(1.05); }
 
-  footer { text-align:center; padding:30px; background:#111; color:#fff; margin-top:50px; }
+  pie de página { alineación de texto: centro; relleno: 30px; fondo: #111; color: #fff; margen superior: 50px; }
 
   .whatsapp-float {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#25d366;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    posición:fija;
+    parte inferior: 20px;
+    derecha: 20px;
+    ancho: 60px;
+    altura: 60px;
+    radio de borde: 50%;
+    fondo:#25d366;
+    pantalla:flex;
+    alinear-elementos:centro;
+    justificar-contenido:centro;
     box-shadow:0 4px 12px rgba(0,0,0,0.3);
-    z-index:1000;
-    cursor:pointer;
-    animation: pulse 2s infinite;
+    índice z:1000;
+    cursor:puntero;
+    animación: pulso 2s infinito;
   }
   .whatsapp-float img {
-    width:35px;
-    height:35px;
-    border-radius:50%;
+    ancho: 35px;
+    altura: 35px;
+    radio de borde: 50%;
   }
   .whatsapp-float:hover { transform: scale(1.1); animation:none; }
 
   @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
 
-  /* Lightbox tipo carrusel */
+  /* Lightbox */
   #lightbox-modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.9); }
-  #lightbox-modal img { margin:auto; display:block; max-width:90%; max-height:80%; border-radius:8px; position:relative; top:50%; transform:translateY(-50%); }
-  #lightbox-modal span.close { position:absolute; top:20px; right:35px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer; }
-  #lightbox-modal span.prev, #lightbox-modal span.next {
-    position:absolute; top:50%; transform:translateY(-50%);
-    color:#fff; font-size:50px; font-weight:bold; cursor:pointer; padding:10px;
-  }
-  #lightbox-modal span.prev { left:20px; }
-  #lightbox-modal span.next { right:20px; }
+/* SNAP tipo Netflix */
+.carrusel {
+  tipo de ajuste al desplazamiento: x obligatorio;
+}
 
-  @media(max-width:900px){
-    header { flex-direction:column; padding:10px; }
-    nav { margin-top:10px; }
-    .hero h1 { font-size:3rem; }
-    .hero p { font-size:1.2rem; }
-    .hero-buttons a { padding:10px 20px; }
-    .contacto { flex-direction:column; }
-  }
+.tarjeta {
+  alineación de desplazamiento: centro;
+}
+
+/* Fade en los costados */
+.carousel-container.fade::before,
+.carousel-container.fade::after {
+  contenido: "";
+  posición: absoluta;
+  superior: 0;
+  ancho: 80px;
+  altura: 100%;
+  índice z: 5;
+  eventos de puntero: ninguno;
+}
+
+.carousel-container.fade::before {
+  izquierda: 0;
+  fondo: gradiente lineal (hacia la derecha, #fafafa, transparente);
+}
+
+.carousel-container.fade::after {
+  derecha: 0;
+  fondo: gradiente lineal (hacia la izquierda, #fafafa, transparente);
+}
 </style>
 </head>
-<body>
+<cuerpo>
 
-<header>
+<encabezado>
   <img src="images/logoreal.jpeg" alt="RC Logo">
   <nav>
     <a href="#disciplinas">Disciplinas</a>
@@ -152,15 +214,35 @@
 <section id="disciplinas">
   <h2>Disciplinas</h2>
 
-  <h3>Babys</h3>
-  <div class="carousel">
+  <h3>Bebés</h3>
+
+  <div class="carousel-container fade">
+
+
+  <span class="arrow left">❮</span>
+
+ 
+
+ <div class="carousel">
     <div class="card"><img src="images/acrobaby.jpeg" alt=""><h3>Acro Baby</h3><p>3-5 años</p></div>
     <div class="card"><img src="images/iniart.jpeg" alt=""><h3>Iniciación Artística</h3><p>3-5 años</p></div>
     <div class="card"><img src="images/urbbaby.jpeg" alt=""><h3>Urbano Baby</h3><p>3-6 años</p></div>
   </div>
 
+  <span class="arrow right">❯</span>
+
+ 
+
+ </div>
+
   <h3>Infantil</h3>
-  <div class="carousel">
+  <div class="carousel-container fade">
+
+  <span class="arrow left">❮</span>
+
+ 
+
+ <div class="carousel">
     <div class="card"><img src="images/jazzinfa.jpeg" alt=""><h3>Jazz Infantil A</h3><p>6-8 años</p></div>
     <div class="card"><img src="images/jazzb.jpeg" alt=""><h3>Jazz Infantil B</h3><p>9-12 años</p></div>
     <div class="card"><img src="images/regginf.jpeg" alt=""><h3>Reggaeton Infantil 7-9 años</h3></div>
@@ -168,38 +250,68 @@
     <div class="card"><img src="images/coreokids.jpeg" alt=""><h3>Coreo Kids</h3><p>7-11 años</p></div>
   </div>
 
+<span class="arrow right">❯</span>
+
+ 
+
+ </div>
+
   <h3>Juvenil / Adulto</h3>
-  <div class="carousel">
-    <div class="card"><img src="images/regginf.jpeg" alt=""><h3>Reggaeton Teens 10-12 años</h3></div>
+  <div class="carousel-container fade">
+
+  <span class="arrow left">❮</span>
+
+ 
+
+ <div class="carousel">
+    <div class="card"><img src="images/regginf.jpeg" alt=""><h3>Reggaeton para adolescentes de 10 a 12 años</h3></div>
     <div class="card"><img src="images/acrotelajuve.jpeg" alt=""><h3>Acro en Telas</h3><p>+12 años</p></div>
     <div class="card"><img src="images/danzaclasica.jpeg" alt=""><h3>Danza Clásica</h3></div>
     <div class="card"><img src="images/danzajazzprinci.jpeg" alt=""><h3>Danza Jazz Principiantes</h3></div>
     <div class="card"><img src="images/rockandroll.jpeg" alt=""><h3>Rock And Roll</h3></div>
     <div class="card"><img src="images/danzaclasicaadul.jpeg" alt=""><h3>Danza Clásica Adultos</h3></div>
-    <div class="card"><img src="images/femmeyheels.jpeg" alt=""><h3>Femme/Heels</h3></div>
+    <div class="card"><img src="images/femmeyheels.jpeg" alt=""><h3>Mujer/Tacones</h3></div>
     <div class="card"><img src="images/poleexotic.jpeg" alt=""><h3>Pole Exotic</h3></div>
     <div class="card"><img src="images/reggaetonconi.jpeg" alt=""><h3>Reggaeton Fusion</h3></div>
   </div>
 
+<span class="arrow right">❯</span>
+
+ 
+
+ </div>
+
   <h3>Todas las edades</h3>
-  <div class="carousel">
-    <div class="card"><img src="images/acrodance.jpeg" alt=""><h3>Acro Dance</h3></div>
+  <div class="carousel-container fade">
+
+  <span class="arrow left">❮</span>
+
+ 
+
+ <div class="carousel">
+    <div class="card"><img src="images/acrodance.jpeg" alt=""><h3>Danza acrobática</h3></div>
     <div class="card"><img src="images/acroenarolyra.jpeg" alt=""><h3>Acro en Aro (Lyra)</h3></div>
     <div class="card"><img src="images/elongacion.jpeg" alt=""><h3>Elongación</h3></div>
-    <div class="card"><img src="images/polegiratorio.jpeg" alt=""><h3>Pole Giratorio Multinivel</h3></div>
+    <div class="card"><img src="images/polegiratorio.jpeg" alt=""><h3>Polo Giratorio Multinivel</h3></div>
     <div class="card"><img src="images/polesport.jpeg" alt=""><h3>Pole Sport Multinivel</h3></div>
   </div>
+
+<span class="arrow right">❯</span>
+
+ 
+
+ </div>
+
 </section>
-  <!-- Resto de carouseles similares -->
-</section>
+  <!-- Resto de carruseles similares -->
 
 <section id="sedes">
   <h2>Sedes</h2>
   <div class="carousel">
     <div class="sede">
-      <img src="images/horariosplanes.jpeg" alt="Planes">
+      <img src="images/horariosplanes.jpeg" alt="Aviones">
       <div class="sede-info">
-        <h3>Planes 1933, William Morris</h3>
+        <h3>Aviones, 1933, William Morris</h3>
         <a href="https://maps.app.goo.gl/Bzukv6PiCKzhu9ATA" target="_blank">Ver en Maps</a>
       </div>
     </div>
@@ -216,7 +328,7 @@
 <section id="horarios">
   <h2>Horarios</h2>
   <div class="horarios">
-    <img src="images/horariosplanes.jpeg" alt="Horarios Planes">
+    <img src="images/horariosplanes.jpeg" alt="Planos Horarios">
     <img src="images/horariossedepotosi.jpeg" alt="Horarios Potosí">
   </div>
 </section>
@@ -252,8 +364,8 @@
   </div>
 </section>
 
-<footer>
-  &copy; 2025 RC Estudio de Danzas. Todos los derechos reservados.
+<pie de página>
+  &Copiar; 2025 RC Estudio de Danzas. Todos los derechos reservados.
 </footer>
 
 <!-- Botón flotante WhatsApp -->
@@ -261,49 +373,63 @@
   <img src="images/logowppreal.jpeg" alt="WhatsApp">
 </a>
 
-<!-- Lightbox modal -->
+<!-- Ventana modal Lightbox -->
 <div id="lightbox-modal">
-  <span class="close">&times;</span>
-  <span class="prev">&#10094;</span>
-  <span class="next">&#10095;</span>
+  <span class="close">×</span>
+  <span class="prev">❮</span>
+  <span class="next">❯</span>
   <img id="lightbox-content" src="">
 </div>
 
 <script>
   // Scroll suave
   document.querySelectorAll('nav a, .hero-buttons a').forEach(link=>{
-    link.addEventListener('click', e=>{
+    enlace.addEventListener('click', e=>{
       e.preventDefault();
       document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
     });
   });
 
-  // Lightbox carrusel
+  // Carrusel de lightbox
   const images = Array.from(document.querySelectorAll('.card img, .horarios img, .sede img'));
   const modal = document.getElementById('lightbox-modal');
   const modalImg = document.getElementById('lightbox-content');
   const closeBtn = document.querySelector('#lightbox-modal .close');
   const prevBtn = document.querySelector('#lightbox-modal .prev');
   const nextBtn = document.querySelector('#lightbox-modal .next');
-  let currentIndex = 0;
+  sea ​​currentIndex = 0;
 
-  function showImage(index){
+  función mostrarImagen(índice){
     modal.style.display = 'block';
     modalImg.src = images[index].src;
-    currentIndex = index;
+    índiceactual = índice;
   }
 
-  images.forEach((img,i)=>{ img.addEventListener('click', ()=> showImage(i)); });
+  imágenes.forEach((img,i)=>{ img.addEventListener('click', ()=> showImage(i)); });
 
   closeBtn.onclick = () => { modal.style.display='none'; }
   prevBtn.onclick = () => { showImage((currentIndex-1+images.length)%images.length); }
   nextBtn.onclick = () => { showImage((currentIndex+1)%images.length); }
   window.onclick = e => { if(e.target==modal){ modal.style.display='none'; } }
+
+// Carruseles con flechas
+  document.querySelectorAll(".carousel-container").forEach(container => {
+    const carrusel = container.querySelector(".carousel");
+    const left = container.querySelector(".arrow.left");
+    const right = container.querySelector(".arrow.right");
+
+    si(izquierda && derecha && carrusel){
+      izquierda.addEventListener("click", () => {
+        carrusel.scrollBy({ left: -300, behavior: "smooth" });
+      });
+
+      derecha.addEventListener("click", () => {
+        carrusel.scrollBy({ left: carrusel.offsetWidth, behavior: "smooth" });
+      });
+    }
+  });
+
 </script>
 
 </body>
 </html>
-
-
-
-
