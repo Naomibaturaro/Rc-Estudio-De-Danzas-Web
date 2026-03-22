@@ -40,7 +40,7 @@
   section h2::after { content:''; display:block; width:80px; height:4px; background:#d4af37; margin:10px auto 0; border-radius:2px; }
   section h3 { margin:25px 0 15px; color:#111; text-align:center; font-size:1.5rem; }
 
-  .carousel { display:flex; overflow-x:auto; scroll-behavior:smooth; gap:20px; padding:0 25px; }
+  .carousel { display:flex; overflow-x:auto; scroll-behavior:smooth; gap:20px; padding:0 25px;scroll-snap-type: x mandatory; }
   .carousel::-webkit-scrollbar { display:none; }
 
   .card { flex:0 0 auto; width:220px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:center; }
@@ -155,12 +155,47 @@
   @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
 
   /* Lightbox */
-  #lightbox-modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.9); }
-/* SNAP tipo Netflix */
-.carousel {
-  scroll-snap-type: x mandatory;
+#lightbox-modal {
+  display:none;
+  position:fixed;
+  z-index:2000;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.9);
 }
 
+#lightbox-modal.active {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+/* Botón cerrar */
+#lightbox-modal .close {
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* Flechas */
+#lightbox-modal .prev,
+#lightbox-modal .next {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+  padding:10px;
+}
+
+#lightbox-modal .prev { left:20px; }
+#lightbox-modal .next { right:20px; }
+    
 .card {
   scroll-snap-align: center;
 }
@@ -400,17 +435,17 @@
   let currentIndex = 0;
 
   function showImage(index){
-    modal.style.display = 'block';
+    modal.classList.add('active');
     modalImg.src = images[index].src;
     currentIndex = index;
   }
 
   images.forEach((img,i)=>{ img.addEventListener('click', ()=> showImage(i)); });
 
-  closeBtn.onclick = () => { modal.style.display='none'; }
+  closeBtn.onclick = () => { modal.classList.remove('active'); }
   prevBtn.onclick = () => { showImage((currentIndex-1+images.length)%images.length); }
   nextBtn.onclick = () => { showImage((currentIndex+1)%images.length); }
-  window.onclick = e => { if(e.target==modal){ modal.style.display='none'; } }
+  window.onclick = e => { if(e.target==modal){ modal.classList.remove('active'); } }
 
 // Carruseles con flechas
   document.querySelectorAll(".carousel-container").forEach(container => {
