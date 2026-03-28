@@ -134,9 +134,12 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   z-index: 3000;
+
+  border-radius: 50%;
+  overflow: hidden; /* clave */
 
   display: flex;
   align-items: center;
@@ -149,7 +152,7 @@
 .whatsapp-float img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .whatsapp-float:hover {
@@ -241,6 +244,23 @@
   color: #111;
   transform: scale(1.05);
 }
+
+/* Empeza hoy */
+    .btn {
+  display: inline-block;
+  background: #d4af37;
+  color: #111;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #b8932a;
+  transform: scale(1.05);
+}
 /* Fade en los costados */
 .carousel-container.fade::before,
 .carousel-container.fade::after {
@@ -284,7 +304,7 @@
   <div class="hero-buttons">
     <a href="#disciplinas">Ver Disciplinas</a>
     <a href="#sedes">Ver Sedes</a>
-    <a href="#compañia">Ver Companía</a>
+    <a href="#compania">Ver Companía</a>
     <a href="#sumate">Sumate al Staff de RC</a>
   </div>
 </section>
@@ -405,26 +425,30 @@
 
   </div>
   </section>
-<div style="max-width:800px; margin:0 auto; text-align:center;">
+<<section id="compania">
+  <h2>Compañía y Competencias</h2>
 
-  <p style="font-weight:600; color:#d4af37; margin-bottom:10px;">
-    Competencias nacionales • Viajes • Experiencia escénica
-  </p>
+  <div style="max-width:800px; margin:0 auto; text-align:center;">
 
-  <p style="color:#555; margin-bottom:20px;">
-    En RC Estudio de Danzas formamos bailarines que van más allá de la clase.
-    Contamos con grupos de competencia en danza jazz y reggaetón, desde nivel infantil hasta adulto.
-  </p>
+    <p style="font-weight:600; color:#d4af37; margin-bottom:10px;">
+      Competencias nacionales • Viajes • Experiencia escénica
+    </p>
 
-  <h3 style="margin:20px 0;">
-    Formamos bailarines que compiten, crecen y representan
-  </h3>
+    <p style="color:#555; margin-bottom:20px;">
+      En RC Estudio de Danzas formamos bailarines que van más allá de la clase.
+      Contamos con grupos de competencia en danza jazz y reggaetón, desde nivel infantil hasta adulto.
+    </p>
 
-  <p style="color:#555; margin-bottom:25px;">
-    Nuestro equipo de jazz participa cada año en competencias a nivel nacional,
-    viajando al interior del país y representando al estudio en distintos escenarios.
-  </p>
+    <h3 style="margin:20px 0;">
+      Formamos bailarines que compiten, crecen y representan
+    </h3>
 
+    <p style="color:#555; margin-bottom:25px;">
+      Nuestro equipo de jazz participa cada año en competencias a nivel nacional,
+      viajando al interior del país y representando al estudio en distintos escenarios.
+    </p>
+
+  </div>
 </div>
   <div class="carousel-container fade">
 
@@ -528,7 +552,7 @@
       <div style="margin-top:25px;">
         <a href="https://wa.me/541162287342?text=Hola,%20quiero%20info%20sobre%20clases"
            target="_blank"
-           class="hero-buttons">
+           class="btn">
            Consultar clases ahora
         </a>
       </div>
