@@ -78,7 +78,7 @@
   .arrow.left { left: 10px; }
   .arrow.right { right: 10px; }
 
-  /* ZOOM TIPO NETFLIX */
+  /* ZOOM */
   .card {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
@@ -164,12 +164,21 @@
   width:100%;
   height:100%;
   background-color: rgba(0,0,0,0.9);
+  padding:20px;
 }
 
 #lightbox-modal.active {
   display:flex;
   justify-content:center;
   align-items:center;
+}
+    #lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+    #lightbox-modal img {
+  touch-action: manipulation;
 }
 /* Botón cerrar */
 #lightbox-modal .close {
@@ -221,12 +230,13 @@
   right: 0;
   background: linear-gradient(to left, #fafafa, transparent);
 }
+    
 </style>
 </head>
 <body>
 
 <header>
-  <img src="images/logoreal.jpeg" alt="RC Logo">
+  <img src="images/logorc.jpeg" alt="RC Logo">
   <nav>
     <a href="#disciplinas">Disciplinas</a>
     <a href="#sedes">Sedes</a>
@@ -242,7 +252,8 @@
   <div class="hero-buttons">
     <a href="#disciplinas">Ver Disciplinas</a>
     <a href="#sedes">Ver Sedes</a>
-    <a href="#horarios">Ver Horarios</a>
+    <a href="#horarios">Ver Companias</a>
+    <a href="#sumate">Sumate al Staff de RC</a>
   </div>
 </section>
 
@@ -259,9 +270,9 @@
  
 
  <div class="carousel">
-    <div class="card"><img src="images/acrobaby.jpeg" alt=""><h3>Acro Baby</h3><p>3-5 años</p></div>
-    <div class="card"><img src="images/iniart.jpeg" alt=""><h3>Iniciación Artística</h3><p>3-5 años</p></div>
-    <div class="card"><img src="images/urbbaby.jpeg" alt=""><h3>Urbano Baby</h3><p>3-6 años</p></div>
+    <div class="card"><img src="images/acrobaby.jpeg" alt=""><h3>Acro Baby</h3></div>
+    <div class="card"><img src="images/jazzbaby.jpeg" alt=""><h3>Jazz Baby</h3></div>
+    <div class="card"><img src="images/urbbaby.jpeg" alt=""><h3>Urbano Baby</h3></div>
   </div>
 
   <span class="arrow right">&#10095;</span>
@@ -280,9 +291,12 @@
  <div class="carousel">
     <div class="card"><img src="images/jazzinfa.jpeg" alt=""><h3>Jazz Infantil A</h3><p>6-8 años</p></div>
     <div class="card"><img src="images/jazzb.jpeg" alt=""><h3>Jazz Infantil B</h3><p>9-12 años</p></div>
-    <div class="card"><img src="images/regginf.jpeg" alt=""><h3>Reggaeton Infantil 7-9 años</h3></div>
-    <div class="card"><img src="images/urbanoinf.jpeg" alt=""><h3>Urbano Infantil</h3><p>7-11 años</p></div>
-    <div class="card"><img src="images/coreokids.jpeg" alt=""><h3>Coreo Kids</h3><p>7-11 años</p></div>
+    <div class="card"><img src="images/clasicoinf.jpeg" alt=""><h3>Danza Clásica</h3></div>
+    <div class="card"><img src="images/coreokids.jpeg" alt=""><h3>Coreo Kids</h3></div>
+    <div class="card"><img src="images/reggaetoninf.jpeg" alt=""><h3>Reggaeton Infantil</h3></div>
+   <div class="card"><img src="images/reggaetoninfav.jpeg" alt=""><h3>Reggaeton Infantil Avanzados</h3></div>
+   <div class="card"><img src="images/telasinf.jpeg" alt=""><h3>Acrobacias en Telas</h3></div>
+   <div class="card"><img src="images/urbinf.jpeg" alt=""><h3>Urbano Infantil</h3></div>
   </div>
 
 <span class="arrow right">&#10095;</span>
@@ -299,13 +313,13 @@
  
 
  <div class="carousel">
-    <div class="card"><img src="images/regginf.jpeg" alt=""><h3>Reggaeton Teens 10-12 años</h3></div>
-    <div class="card"><img src="images/acrotelajuve.jpeg" alt=""><h3>Acro en Telas</h3><p>+12 años</p></div>
-    <div class="card"><img src="images/danzaclasica.jpeg" alt=""><h3>Danza Clásica</h3></div>
-    <div class="card"><img src="images/danzajazzprinci.jpeg" alt=""><h3>Danza Jazz Principiantes</h3></div>
+    <div class="card"><img src="images/jazzjuvad.jpeg" alt=""><h3>Jazz Juvenil-Adulto</h3></div>
+    <div class="card"><img src="images/telasjuvad.jpeg" alt=""><h3>Acrobacias en Telas</h3><p>+12 años</p></div>
+    <div class="card"><img src="images/clasicojuvad.jpeg" alt=""><h3>Danza Clásica</h3></div>
+    <div class="card"><img src="images/urbanojuvad.jpeg" alt=""><h3>Urbano Juvenil-Adulto</h3></div>
     <div class="card"><img src="images/rockandroll.jpeg" alt=""><h3>Rock And Roll</h3></div>
-    <div class="card"><img src="images/danzaclasicaadul.jpeg" alt=""><h3>Danza Clásica Adultos</h3></div>
-    <div class="card"><img src="images/femmeyheels.jpeg" alt=""><h3>Femme/Heels</h3></div>
+    <div class="card"><img src="images/reggaetonfusion.jpeg" alt=""><h3>Reggaeton Fusión</h3></div>
+    <div class="card"><img src="images/coreoteens.jpeg" alt=""><h3>Coreo Teens</h3></div>
     <div class="card"><img src="images/poleexotic.jpeg" alt=""><h3>Pole Exotic</h3></div>
     <div class="card"><img src="images/reggaetonconi.jpeg" alt=""><h3>Reggaeton Fusion</h3></div>
   </div>
@@ -324,10 +338,11 @@
  
 
  <div class="carousel">
-    <div class="card"><img src="images/acrodance.jpeg" alt=""><h3>Acro Dance</h3></div>
-    <div class="card"><img src="images/acroenarolyra.jpeg" alt=""><h3>Acro en Aro (Lyra)</h3></div>
     <div class="card"><img src="images/elongacion.jpeg" alt=""><h3>Elongación</h3></div>
-    <div class="card"><img src="images/polegiratorio.jpeg" alt=""><h3>Pole Giratorio Multinivel</h3></div>
+    <div class="card"><img src="images/acrodance.jpeg" alt=""><h3>Acro Dance</h3></div>
+    <div class="card"><img src="images/arabe.jpeg" alt=""><h3>Danzas Arabes Mix</h3></div>
+    <div class="card"><img src="images/jazzcontempo.jpeg" alt=""><h3>Jazz Contempo</h3></div>
+    <div class="card"><img src="images/pilatesmat.jpeg" alt=""><h3>Pilates Mat</h3></div>
     <div class="card"><img src="images/polesport.jpeg" alt=""><h3>Pole Sport Multinivel</h3></div>
   </div>
 
@@ -342,40 +357,78 @@
 
 <section id="sedes">
   <h2>Sedes</h2>
-  <div class="carousel">
-    <div class="sede">
-      <img src="images/horariosplanes.jpeg" alt="Planes">
-      <div class="sede-info">
-        <h3>Planes 1933, William Morris</h3>
-        <a href="https://maps.app.goo.gl/Bzukv6PiCKzhu9ATA" target="_blank">Ver en Maps</a>
-      </div>
+
+  <div class="horarios">
+
+    <div class="card" style="padding:20px;">
+      <h3>📍 Planes 1933</h3>
+      <p>William Morris</p>
+      <a href="https://maps.app.goo.gl/Bzukv6PiCKzhu9ATA" target="_blank">Ver ubicación</a>
     </div>
-    <div class="sede">
-      <img src="images/horariossedepotosi.jpeg" alt="Potosí">
-      <div class="sede-info">
-        <h3>Potosí 3249, William Morris</h3>
-        <a href="https://maps.app.goo.gl/T1Vhj3F1aFmxLCVw6" target="_blank">Ver en Maps</a>
-      </div>
+
+    <div class="card" style="padding:20px;">
+      <h3>📍 Potosí 3249</h3>
+      <p>William Morris</p>
+      <a href="https://maps.app.goo.gl/T1Vhj3F1aFmxLCVw6" target="_blank">Ver ubicación</a>
     </div>
+
   </div>
 </section>
+<section id="compania">
+  <h2>Compañía y Competencias</h2>
 
-<section id="horarios">
-  <h2>Horarios</h2>
-  <div class="horarios">
-    <img src="images/horariosplanes.jpeg" alt="Horarios Planes">
-    <img src="images/horariossedepotosi.jpeg" alt="Horarios Potosí">
+  <div style="max-width:900px; margin:0 auto; text-align:center;">
+    <p style="margin-bottom:20px;">
+      En RC Estudio de Danzas formamos bailarines que van más allá de la clase.
+      Contamos con grupos de competencia en danza jazz y reggaetón, desde nivel infantil hasta adulto.
+    </p>
+
+   <p style="margin-bottom:20px;">
+  Nuestro equipo de jazz participa cada año en competencias a nivel nacional,
+  viajando al interior del país y representando al estudio en distintos escenarios.
+</p>
+
+<div style="display:flex; gap:15px; overflow-x:auto; padding-bottom:10px; margin-bottom:25px;">
+  <img src="images/vcp.jpeg" style="height:220px; border-radius:10px;">
+  <img src="images/americandancing.jpeg" style="height:220px; border-radius:10px;">
+</div>
+
+    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://wa.me/541162287342?text=Hola,%20quiero%20info%20sobre%20las%20audiciones%20para%20sumarme%20a%20la%20compañía%20de%20danzas"
+         target="_blank"
+         class="hero-buttons">
+         Quiero competir
+      </a>
+
+      <a href="#disciplinas" class="hero-buttons">
+        Ver disciplinas
+      </a>
+    </div>
   </div>
 </section>
 
 <section id="profesorados">
   <h2>Formación Docente</h2>
   <div class="grid">
-    <div class="card"><h3>Profesorado Clásico</h3><p>Formación integral en técnica clásica y pedagogía coreográfica</p></div>
-    <div class="card"><h3>Profesorado Jazz</h3><p>Formación integral en técnica jazz y pedagogía coreográfica</p></div>
+    <div class="card">
+      <h3>Profesorado en Danza Jazz</h3>
+      <img src="images/profesoradojazz.jpeg" alt="Profesorado Superior de Danza Jazz">
+      <p>Formación integral en técnica jazz y pedagogía coreográfica. Preparación profesional para la enseñanza.</p>
+    </div>
   </div>
 </section>
+  <section id="sumate">
+  <h2>Sumate al equipo</h2>
+  <p style="text-align:center; max-width:700px; margin:0 auto 30px;">
+    ¿Sos profe o querés dar clases? Enviá tu información y material para formar parte de RC Estudio de Danzas.
+  </p>
 
+  <div style="display:flex; justify-content:center;">
+    <iframe src="ACA_VA_EL_LINK_DEL_FORM"
+      width="100%" height="600" style="max-width:800px; border:none;">
+    </iframe>
+  </div>
+</section>
 <section id="contacto">
   <h2>Contáctanos</h2>
   <h3>¿Listo para comenzar?</h3>
