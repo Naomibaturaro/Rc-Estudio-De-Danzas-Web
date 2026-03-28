@@ -130,29 +130,24 @@
 
   footer { text-align:center; padding:30px; background:#111; color:#fff; margin-top:50px; }
 
-  .whatsapp-float {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#25d366;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.3);
-    z-index:1000;
-    cursor:pointer;
-    animation: pulse 2s infinite;
-  }
-  .whatsapp-float img {
-    width:35px;
-    height:35px;
-    border-radius:50%;
-  }
-  .whatsapp-float:hover { transform: scale(1.1); animation:none; }
+  🎯 4. DETALLE FINO (te lo marco porque ya estás en nivel alto)
 
+Ese bloque:
+
+👉 título dorado
+👉 línea dorada
+👉 texto dorado
+👉 texto negro
+👉 subtítulo
+
+Está medio “cargado”
+
+💡 OPCIONAL PRO
+
+Podés hacer:
+
+dejar SOLO uno en dorado (el destacado)
+el resto más neutro
   @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
 
   /* Lightbox */
@@ -221,6 +216,21 @@
     #compania .card img {
   height: 220px;
   object-fit: cover;
+}
+    .btn {
+  display:inline-block;
+  background:#d4af37;
+  color:#111;
+  padding:12px 30px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#b8932a;
+  transform:scale(1.05);
 }
 /* Fade en los costados */
 .carousel-container.fade::before,
@@ -392,7 +402,7 @@
   Competencias nacionales • Viajes • Experiencia escénica
 </p>
 
-  <div style="max-width:900px; margin:0 auto; text-align:center;">
+  <p style="font-weight:600; color:#555; margin-bottom:20px; text-align:center;">
     <p style="margin-bottom:20px;">
       En RC Estudio de Danzas formamos bailarines que van más allá de la clase.
       Contamos con grupos de competencia en danza jazz y reggaetón, desde nivel infantil hasta adulto.
@@ -431,12 +441,12 @@
 
   <!-- CTA -->
   <div style="text-align:center; margin-top:30px;">
-    <a href="https://instagram.com/goldyshinecompany_rc"
-       target="_blank"
-       class="hero-buttons">
-       Ver compañía en Instagram
-    </a>
-  </div>
+  <a href="https://instagram.com/goldyshinecompany_rc"
+     target="_blank"
+     class="btn">
+     Ver compañía en Instagram
+  </a>
+</div>
 
 </section>
 
