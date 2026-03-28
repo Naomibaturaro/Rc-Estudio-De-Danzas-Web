@@ -130,24 +130,31 @@
 
   footer { text-align:center; padding:30px; background:#111; color:#fff; margin-top:50px; }
 
-  🎯 4. DETALLE FINO (te lo marco porque ya estás en nivel alto)
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  z-index: 3000;
 
-Ese bloque:
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-👉 título dorado
-👉 línea dorada
-👉 texto dorado
-👉 texto negro
-👉 subtítulo
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-Está medio “cargado”
+.whatsapp-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-💡 OPCIONAL PRO
-
-Podés hacer:
-
-dejar SOLO uno en dorado (el destacado)
-el resto más neutro
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
   @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
 
   /* Lightbox */
@@ -218,19 +225,21 @@ el resto más neutro
   object-fit: cover;
 }
     .btn {
-  display:inline-block;
-  background:#d4af37;
-  color:#111;
-  padding:12px 30px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
+  display: inline-block;
+  background: transparent;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background:#b8932a;
-  transform:scale(1.05);
+  background: #d4af37;
+  color: #111;
+  transform: scale(1.05);
 }
 /* Fade en los costados */
 .carousel-container.fade::before,
@@ -263,7 +272,7 @@ el resto más neutro
   <nav>
     <a href="#disciplinas">Disciplinas</a>
     <a href="#sedes">Sedes</a>
-    <a href="#compañia">Compañía</a>
+    <a href="#compania">Compañía</a>
     <a href="#profesorados">Profesorados</a>
     <a href="#contacto">Empeza Hoy</a>
   </nav>
@@ -396,23 +405,27 @@ el resto más neutro
 
   </div>
   </section>
-<section id="compania">
-  <h2>Compañía y Competencias</h2>
-  <p style="font-weight:600; color:#d4af37; margin-bottom:10px;">
-  Competencias nacionales • Viajes • Experiencia escénica
-</p>
+<div style="max-width:800px; margin:0 auto; text-align:center;">
 
-  <p style="font-weight:600; color:#555; margin-bottom:20px; text-align:center;">
-    <p style="margin-bottom:20px;">
-      En RC Estudio de Danzas formamos bailarines que van más allá de la clase.
-      Contamos con grupos de competencia en danza jazz y reggaetón, desde nivel infantil hasta adulto.
-    </p>
-   <h3>Formamos bailarines que compiten, crecen y representan</h3>
-    <p style="margin-bottom:25px;">
-      Nuestro equipo de jazz participa cada año en competencias a nivel nacional,
-      viajando al interior del país y representando al estudio en distintos escenarios.
-    </p>
-    
+  <p style="font-weight:600; color:#d4af37; margin-bottom:10px;">
+    Competencias nacionales • Viajes • Experiencia escénica
+  </p>
+
+  <p style="color:#555; margin-bottom:20px;">
+    En RC Estudio de Danzas formamos bailarines que van más allá de la clase.
+    Contamos con grupos de competencia en danza jazz y reggaetón, desde nivel infantil hasta adulto.
+  </p>
+
+  <h3 style="margin:20px 0;">
+    Formamos bailarines que compiten, crecen y representan
+  </h3>
+
+  <p style="color:#555; margin-bottom:25px;">
+    Nuestro equipo de jazz participa cada año en competencias a nivel nacional,
+    viajando al interior del país y representando al estudio en distintos escenarios.
+  </p>
+
+</div>
   <div class="carousel-container fade">
 
     <span class="arrow left">&#10094;</span>
