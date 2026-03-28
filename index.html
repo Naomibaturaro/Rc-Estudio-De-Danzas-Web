@@ -21,8 +21,9 @@
   nav a:hover { color:#d4af37; }
 
   .hero {
-    height:90vh;
-    background: url("images/muestrarc.jpeg") center/cover no-repeat;
+    min-height: 75vh;
+    padding:120px 20px 80px;
+    background: url("images/RCMUESTRA.jpg") center/cover no-repeat;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
     text-align:center; color:#fff; padding-top:60px;
   }
@@ -217,6 +218,10 @@
  #compania img:hover {
   transform: scale(1.05);
 }
+    #compania .card img {
+  height: 220px;
+  object-fit: cover;
+}
 /* Fade en los costados */
 .carousel-container.fade::before,
 .carousel-container.fade::after {
@@ -248,9 +253,9 @@
   <nav>
     <a href="#disciplinas">Disciplinas</a>
     <a href="#sedes">Sedes</a>
-    <a href="#horarios">Compañía</a>
+    <a href="#compañia">Compañía</a>
     <a href="#profesorados">Profesorados</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#contacto">Empeza Hoy</a>
   </nav>
 </header>
 
@@ -260,7 +265,7 @@
   <div class="hero-buttons">
     <a href="#disciplinas">Ver Disciplinas</a>
     <a href="#sedes">Ver Sedes</a>
-    <a href="#horarios">Ver Companias</a>
+    <a href="#compañia">Ver Companía</a>
     <a href="#sumate">Sumate al Staff de RC</a>
   </div>
 </section>
@@ -380,41 +385,59 @@
     </div>
 
   </div>
-</section>
+  </section>
 <section id="compania">
   <h2>Compañía y Competencias</h2>
+  <p style="font-weight:600; color:#d4af37; margin-bottom:10px;">
+  Competencias nacionales • Viajes • Experiencia escénica
+</p>
 
   <div style="max-width:900px; margin:0 auto; text-align:center;">
     <p style="margin-bottom:20px;">
       En RC Estudio de Danzas formamos bailarines que van más allá de la clase.
       Contamos con grupos de competencia en danza jazz y reggaetón, desde nivel infantil hasta adulto.
     </p>
+   <h3>Formamos bailarines que compiten, crecen y representan</h3>
+    <p style="margin-bottom:25px;">
+      Nuestro equipo de jazz participa cada año en competencias a nivel nacional,
+      viajando al interior del país y representando al estudio en distintos escenarios.
+    </p>
+    
+  <div class="carousel-container fade">
 
-   <p style="margin-bottom:20px;">
-  Nuestro equipo de jazz participa cada año en competencias a nivel nacional,
-  viajando al interior del país y representando al estudio en distintos escenarios.
-</p>
+    <span class="arrow left">&#10094;</span>
 
-<div style="display:flex; gap:15px; overflow-x:auto; padding-bottom:10px; margin-bottom:25px;">
-  <img src="images/vcp.jpeg" style="height:220px; border-radius:10px;">
-  <img src="images/shine.jpeg" style="height:220px; border-radius:10px;">
-  <img src="images/gold.jpeg" style="height:220px; border-radius:10px;">
-  <img src="images/mdz.jpeg" style="height:220px; border-radius:10px;">
-  <img src="images/americandancing.jpeg" style="height:220px; border-radius:10px;">
-</div>
-
-    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
-      <a href="https://wa.me/541162287342?text=Hola,%20quiero%20info%20sobre%20las%20audiciones%20para%20sumarme%20a%20la%20compañía%20de%20danzas"
-         target="_blank"
-         class="hero-buttons">
-         Quiero competir
-      </a>
-
-      <a href="#disciplinas" class="hero-buttons">
-        Ver disciplinas
-      </a>
+    <div class="carousel">
+      <div class="card">
+        <img src="images/vcp.jpeg" alt="">
+      </div>
+      <div class="card">
+        <img src="images/shine.jpeg" alt="">
+      </div>
+      <div class="card">
+        <img src="images/gold.jpeg" alt="">
+      </div>
+      <div class="card">
+        <img src="images/americandancing.jpeg" alt="">
+      </div>
+      <div class="card">
+        <img src="images/mdz.jpeg" alt="">
+      </div>
     </div>
+
+    <span class="arrow right">&#10095;</span>
+
   </div>
+
+  <!-- CTA -->
+  <div style="text-align:center; margin-top:30px;">
+    <a href="https://instagram.com/goldyshinecompany_rc"
+       target="_blank"
+       class="hero-buttons">
+       Ver compañía en Instagram
+    </a>
+  </div>
+
 </section>
 
 <section id="profesorados">
@@ -440,25 +463,55 @@
   </div>
 </section>
 <section id="contacto">
-  <h2>Contáctanos</h2>
-  <h3>¿Listo para comenzar?</h3>
-  <p>Únete a nuestra comunidad de bailarines y futuros docentes. Ofrecemos clases multinivel y asesoramiento personalizado.</p>
-  <div class="contacto">
+  <h2>Empezá hoy</h2>
+
+  <h3>¿Querés tomar clases?</h3>
+  <p style="text-align:center; max-width:700px; margin:0 auto 30px;">
+    Sumate a RC Estudio de Danzas y encontrá tu lugar para aprender, crecer y disfrutar.
+    Tenemos clases para todas las edades y niveles.
+  </p>
+
+  <div class="contacto" style="justify-content:center; text-align:center;">
+
     <div class="info">
-      <ul>
-        <li><img src="images/logowppreal.jpeg" alt="WhatsApp" width="24"> <a href="https://wa.me/541162287342?text=Hola,%20me%20gustaría%20recibir%20más%20información">+54 9 11 6228-7342</a></li>
-        <li>🏢 Sedes: Planes y Potosí</li>
-        <li><img src="images/fb.png" alt="Facebook" width="24"> <a href="https://facebook.com/rcestudiodedanzas" target="_blank">RC Estudio de Danzas</a></li>
-        <li><img src="images/logoig.jpg" alt="Instagram" width="24"> <a href="https://instagram.com/rcestudiodedanzas" target="_blank">@rcestudiodedanzas</a></li>
+      <ul style="display:flex; flex-direction:column; align-items:center;">
+        
+        <li>
+          <img src="images/logowppreal.jpeg" alt="WhatsApp" width="24">
+          <a href="https://wa.me/541162287342?text=Hola,%20quiero%20info%20sobre%20clases" target="_blank">
+            Escribinos por WhatsApp
+          </a>
+        </li>
+
+        <li>📍 Sedes: Planes y Potosí</li>
+
+        <li>
+          <img src="images/logoig.jpg" alt="Instagram" width="24">
+          <a href="https://instagram.com/rcestudiodedanzas" target="_blank">
+            @rcestudiodedanzas
+          </a>
+        </li>
+
+        <li>
+          <img src="images/fb.png" alt="Facebook" width="24">
+          <a href="https://facebook.com/rcestudiodedanzas" target="_blank">
+            RC Estudio de Danzas
+          </a>
+        </li>
+
       </ul>
+
+      <!-- CTA fuerte -->
+      <div style="margin-top:25px;">
+        <a href="https://wa.me/541162287342?text=Hola,%20quiero%20info%20sobre%20clases"
+           target="_blank"
+           class="hero-buttons">
+           Consultar clases ahora
+        </a>
+      </div>
+
     </div>
-    <form>
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo" required>
-      <input type="tel" placeholder="Teléfono" required>
-      <textarea placeholder="Mensaje" rows="5" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+
   </div>
 </section>
 
