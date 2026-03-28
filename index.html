@@ -110,12 +110,23 @@
   .horarios img { max-width:100%; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); cursor:pointer; transition:0.3s; }
   .horarios img:hover { transform:scale(1.02); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
 
- #profesorados {
+#profesorados {
   background: #111;
   color: #fff;
-  padding: 100px 20px; /* más aire */
+  padding: 100px 20px;
 }
 
+/* TEXTO PRINCIPAL (afuera de la card) */
+.profesorados-desc {
+  text-align: center;
+  max-width: 700px;
+  margin: -10px auto 50px;
+  color: #bbb;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* GRID */
 #profesorados .grid {
   display: flex;
   gap: 40px;
@@ -125,31 +136,36 @@
   margin: 0 auto;
 }
 
+/* CARD */
 #profesorados .card {
   background: #222;
   color: #fff;
-  width: 320px; /* más grande */
-  padding: 25px;
+  width: 320px;
+  padding: 20px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 14px;
+  transition: 0.3s;
 }
 
+/* HOVER SUAVE (nivel pro) */
+#profesorados .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* IMAGEN */
 #profesorados .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 
+/* TITULO */
 #profesorados .card h3 {
   color: #d4af37;
   font-size: 1.3rem;
-}
-
-#profesorados .card p {
-  color: #ccc;
-  font-size: 0.95rem;
 }
 
   #contacto { padding:60px 25px; background:#f8f8f8; }
@@ -170,12 +186,10 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   z-index: 3000;
-
-  border-radius: 50%;
-  overflow: hidden; /* clave */
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 
   display: flex;
   align-items: center;
@@ -188,7 +202,7 @@
 .whatsapp-float img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* clave para PNG */
 }
 
 .whatsapp-float:hover {
@@ -280,7 +294,10 @@
   color: #111;
   transform: scale(1.05);
 }
-
+    
+#compania {
+  padding-bottom: 100px;
+}
 /* Empeza hoy */
     .btn {
   display: inline-block;
@@ -525,11 +542,17 @@
 
 <section id="profesorados">
   <h2>Formación Docente</h2>
+
+  <!-- TEXTO PRINCIPAL (afuera de la card) -->
+  <p class="profesorados-desc">
+    Formación integral en técnica jazz y pedagogía coreográfica.
+    Preparación profesional para la enseñanza.
+  </p>
+
   <div class="grid">
     <div class="card">
-      <h3>Profesorado en Danza Jazz</h3>
       <img src="images/profesoradojazz.jpeg" alt="Profesorado Superior de Danza Jazz">
-      <p>Formación integral en técnica jazz y pedagogía coreográfica. Preparación profesional para la enseñanza.</p>
+      <h3>Profesorado en Danza Jazz</h3>
     </div>
   </div>
 </section>
