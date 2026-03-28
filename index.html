@@ -110,11 +110,47 @@
   .horarios img { max-width:100%; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); cursor:pointer; transition:0.3s; }
   .horarios img:hover { transform:scale(1.02); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
 
-  #profesorados { background:#111; color:#fff; padding:60px 0; }
-  #profesorados .grid { display:flex; gap:25px; flex-wrap:wrap; justify-content:center; padding:0 25px; }
-  #profesorados .card { background:#222; color:#fff; width:250px; padding:20px; text-align:center; }
-  #profesorados .card h3 { color:#d4af37; }
-  #profesorados .card p { color:#ccc; }
+ #profesorados {
+  background: #111;
+  color: #fff;
+  padding: 100px 20px; /* más aire */
+}
+
+#profesorados .grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#profesorados .card {
+  background: #222;
+  color: #fff;
+  width: 320px; /* más grande */
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+#profesorados .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+#profesorados .card h3 {
+  color: #d4af37;
+  font-size: 1.3rem;
+}
+
+#profesorados .card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
 
   #contacto { padding:60px 25px; background:#f8f8f8; }
   .contacto { display:flex; gap:40px; flex-wrap:wrap; justify-content:space-between; margin-top:40px; }
