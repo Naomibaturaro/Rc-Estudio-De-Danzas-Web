@@ -9,17 +9,6 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Montserrat', sans-serif; background:#fafafa; color:#222; scroll-behavior:smooth; }
   h1,h2,h3 { font-family:'Playfair Display', serif; }
-
-  header {
-    position:fixed; top:0; left:0; right:0;
-    background:#111; color:#fff;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:10px 25px; z-index:1000; box-shadow:0 3px 15px rgba(0,0,0,0.5);
-  }
-  header img { height:50px; }
-  nav a { color:#fff; text-decoration:none; margin-left:20px; font-weight:600; font-size:0.95rem; }
-  nav a:hover { color:#d4af37; }
-
   .hero {
     min-height: 75vh;
     padding:120px 20px 80px;
@@ -49,7 +38,11 @@
   .card p { padding-bottom:10px; color:#555; font-size:0.95rem; }
 
   .card img { width:100%; display:block; border-bottom:1px solid #eee; cursor:pointer; border-radius:8px; }
-
+ .menu-toggle {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+ }
   /* CONTENEDOR Y FLECHAS */
   .carousel-container {
     position: relative;
@@ -335,19 +328,51 @@
   right: 0;
   background: linear-gradient(to left, #fafafa, transparent);
 }
-    
+    /* MOBILE MENU */
+#nav-menu {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    padding: 20px;
+  }
+
+  #nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
 </style>
 </head>
 <body>
 
 <header>
   <img src="images/logorc.jpeg" alt="RC Logo">
-  <nav>
+
+  <!-- BOTÓN HAMBURGUESA -->
+  <div id="menu-toggle" class="menu-toggle">☰</div>
+
+  <nav id="nav-menu">
     <a href="#disciplinas">Disciplinas</a>
     <a href="#sedes">Sedes</a>
     <a href="#compania">Compañía</a>
     <a href="#profesorados">Profesorados</a>
-    <a href="#contacto">Empeza Hoy</a>
+    <a href="#contacto">Empezá Hoy</a>
   </nav>
 </header>
 
@@ -688,6 +713,17 @@
       });
     }
   });
+  document.querySelectorAll("#nav-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
+});
+  const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
 
 </script>
 
