@@ -14,7 +14,7 @@
     padding:120px 20px 80px;
     background: url("images/RCMUESTRA.jpg") center/cover no-repeat;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
-    text-align:center; color:#fff; padding-top:60px;
+    text-align:center; color:#fff;
   }
   .hero h1 { font-size:4rem; text-shadow:2px 2px 20px rgba(0,0,0,0.7); }
   .hero p { font-size:1.5rem; margin-top:15px; text-shadow:1px 1px 15px rgba(0,0,0,0.6);}
@@ -575,8 +575,9 @@ header img {
       </div>
       <div class="card">
         <img src="images/mdz.jpeg" alt="">
+       </div>
     </div>
-
+    
     <span class="arrow right">&#10095;</span>
 
   </div>
@@ -589,7 +590,7 @@ header img {
      Ver compañía en Instagram
   </a>
 </div>
-
+</div>
 </section>
 
 <section id="profesorados">
@@ -740,11 +741,6 @@ header img {
       });
     }
   });
-  document.querySelectorAll("#nav-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("active");
-  });
-});
   const toggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav-menu");
 
