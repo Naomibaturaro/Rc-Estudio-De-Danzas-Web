@@ -357,6 +357,34 @@
     display: block;
   }
 }
+    header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  z-index: 1000;
+}
+
+header img {
+  height: 50px;
+}
+
+#nav-menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#nav-menu a:hover {
+  color: #d4af37;
+}
 </style>
 </head>
 <body>
@@ -725,6 +753,12 @@ toggle.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
+// AHORA SÍ
+document.querySelectorAll("#nav-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
+});
 </script>
 
 </body>
